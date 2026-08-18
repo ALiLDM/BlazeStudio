@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>BLAZE STUDIO — BlazeAli</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#07050b;--panel:#100b18;--panel2:#160e20;--purple:#9b4dff;--violet:#6f2cff;--pink:#e15cff;--text:#f7f2ff;--muted:#aaa0b7;--line:#ffffff12;--radius:28px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 70% 10%,#32125a55,transparent 30%),radial-gradient(circle at 15% 50%,#6f2cff18,transparent 28%),var(--bg);color:var(--text);font-family:Vazirmatn,system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:70px 70px;opacity:.025;z-index:-1}
+a{text-decoration:none;color:inherit}.wrap{width:min(1180px,92%);margin:auto}
+.loader{position:fixed;inset:0;background:#060409;display:grid;place-items:center;z-index:9999;transition:.7s}.loader.hide{opacity:0;pointer-events:none}.loadbox{text-align:center}.loadlogo{font:800 34px "Space Grotesk";letter-spacing:4px}.bar{width:190px;height:3px;background:#ffffff12;border-radius:99px;margin:22px auto;overflow:hidden}.bar i{display:block;width:35%;height:100%;background:linear-gradient(90deg,var(--violet),var(--pink));animation:load 1.2s infinite}@keyframes load{to{transform:translateX(470%)}} 
+.cursor,.cursor-ring{position:fixed;pointer-events:none;z-index:10000;mix-blend-mode:screen}.cursor{width:8px;height:8px;border-radius:50%;background:#b76aff;box-shadow:0 0 18px 6px #8d3cff88;transform:translate(-50%,-50%)}.cursor-ring{width:30px;height:30px;border:1px solid #b76aff88;border-radius:50%;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}.cursor-ring.hot{width:48px;height:48px;background:#9b4dff12;border-color:#d18cff}
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1080px,92%);padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:#0c0912c9;backdrop-filter:blur(18px);display:flex;align-items:center;gap:10px;z-index:1000;box-shadow:0 10px 50px #0008}
+.brand{font:800 19px "Space Grotesk";letter-spacing:1.5px;margin-left:auto}.brand span{color:var(--purple)}nav a{padding:10px 13px;color:#cfc6d8;font-size:13px;border-radius:999px;transition:.25s}nav a:hover{background:#ffffff0b;color:white}.owner{background:linear-gradient(135deg,#8b3dff,#c05cff)!important;color:#fff!important}
+.menu{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{min-height:92vh;display:grid;place-items:center;padding-top:100px;position:relative}.orb{position:absolute;border-radius:50%;filter:blur(30px);opacity:.4;pointer-events:none}.o1{width:260px;height:260px;background:#7c32ff;right:5%;top:24%}.o2{width:180px;height:180px;background:#d14cff;left:8%;bottom:16%}
+.hero-inner{max-width:900px;text-align:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border:1px solid #ffffff12;background:#ffffff07;border-radius:999px;color:#d9c5ef;font-size:13px;animation:up .8s both}.dot{width:7px;height:7px;border-radius:50%;background:#b55cff;box-shadow:0 0 12px #b55cff}
+h1{font:900 clamp(55px,10vw,125px)/.9 "Space Grotesk";letter-spacing:-5px;margin:25px 0 14px;background:linear-gradient(120deg,#fff,#c98cff 48%,#8b38ff);-webkit-background-clip:text;color:transparent}h2{font-size:clamp(32px,5vw,62px);line-height:1.05;margin:0 0 15px}.lead{max-width:650px;margin:auto;color:var(--muted);line-height:2;font-size:16px}.actions{display:flex;justify-content:center;gap:12px;margin-top:30px;flex-wrap:wrap}.btn{border:0;border-radius:999px;padding:14px 24px;font:700 14px Vazirmatn;cursor:pointer;transition:.25s}.primary{background:linear-gradient(135deg,#8c3dff,#d157ff);color:#fff;box-shadow:0 12px 35px #8c3dff33}.secondary{background:#ffffff08;color:#fff;border:1px solid var(--line)}.btn:hover{transform:translateY(-3px) scale(1.02)}.scroll{margin-top:60px;color:#777;font-size:12px}
+section{padding:100px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:35px}.kicker{color:#ad6bff;font-size:13px;font-weight:800;letter-spacing:2px}.sub{color:var(--muted);max-width:520px;line-height:1.9}
+.why{display:grid;grid-template-columns:1.4fr .8fr .8fr;grid-template-rows:210px 210px;gap:16px}.tile{padding:28px;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff08,#ffffff02);border-radius:var(--radius);position:relative;overflow:hidden}.tile:nth-child(1){grid-row:span 2;background:radial-gradient(circle at 80% 20%,#8c3dff22,transparent 40%),#ffffff07}.tile:nth-child(2){transform:translateY(22px)}.tile:nth-child(4){transform:translateY(-18px)}.num{font:700 40px "Space Grotesk";color:#ffffff20;position:absolute;left:22px;bottom:10px}.tile h3{margin:0 0 10px;font-size:20px}.tile p{color:var(--muted);line-height:1.9;font-size:14px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{min-height:340px;padding:28px;border-radius:36px;background:linear-gradient(145deg,#171021,#0d0912);border:1px solid var(--line);position:relative;overflow:hidden;transition:.3s}.service:hover{transform:translateY(-8px);border-color:#a85dff55}.service:nth-child(2){margin-top:35px}.service:nth-child(3){margin-top:-15px}.service:after{content:"";position:absolute;width:160px;height:160px;background:#9b4dff18;border-radius:50%;filter:blur(25px);left:-50px;bottom:-50px}.price{font-size:24px;font-weight:900;margin:22px 0}.muted{color:var(--muted);font-size:13px;line-height:1.9}.select{position:absolute;bottom:25px;right:25px;left:25px}
+.portfolio{display:grid;grid-template-columns:1.4fr .8fr .8fr;grid-auto-rows:210px;gap:16px}.work{border-radius:30px;overflow:hidden;position:relative;background:linear-gradient(135deg,#221332,#0d0912);border:1px solid var(--line);padding:25px;display:flex;align-items:end;transition:.35s}.work:hover{transform:scale(.985)}.work:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,#b451ff44,transparent 35%)}.work.big{grid-row:span 2}.work .tag{position:relative;background:#09070dcc;padding:7px 11px;border-radius:99px;font-size:11px}.work h3{position:relative;margin:10px 0 0;font-size:21px}
+.orderbox{display:grid;grid-template-columns:1fr .75fr;gap:18px}.panel{background:#0d0913cc;border:1px solid var(--line);border-radius:34px;padding:28px}.steps{display:flex;gap:7px;margin-bottom:25px;flex-wrap:wrap}.step{padding:8px 12px;border-radius:99px;background:#ffffff07;color:#8f8798;font-size:12px}.step.active{background:#963fff22;color:#d2a5ff}.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.choice{padding:17px;border-radius:20px;border:1px solid var(--line);background:#ffffff05;color:#ddd;cursor:pointer;text-align:right;transition:.2s}.choice:hover,.choice.on{border-color:#a858ff88;background:#8c3dff12}.total{font:900 34px "Space Grotesk";margin:18px 0}.summary-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #ffffff0a;color:#bbb}.copy{width:100%;margin-top:15px}
+.contact{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:35px;border-radius:40px;background:radial-gradient(circle at 80% 30%,#963fff2b,transparent 40%),#ffffff05;border:1px solid var(--line)}
+footer{padding:30px 0 50px;color:#766d80;font-size:12px;text-align:center}
+.modal{position:fixed;inset:0;background:#000b;backdrop-filter:blur(12px);display:none;place-items:center;z-index:2000;padding:20px}.modal.open{display:grid}.modalbox{width:min(460px,100%);background:#100b18;border:1px solid var(--line);border-radius:32px;padding:28px}.close{float:left;border:0;background:#ffffff08;color:#fff;border-radius:50%;width:35px;height:35px;cursor:pointer}.field{margin:12px 0}.field input{width:100%;padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:#ffffff06;color:#fff;outline:none;font:inherit}.field input:focus{border-color:#a858ff}.hidden{display:none}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(28px);transition:.7s}.reveal.show{opacity:1;transform:none}
+@media(max-width:800px){nav{padding:10px 13px}.navlinks{display:none}.menu{display:block}.hero{min-height:82vh}h1{letter-spacing:-3px}.why,.services,.portfolio,.orderbox{grid-template-columns:1fr}.why{display:grid;grid-template-rows:auto}.tile:nth-child(n){transform:none}.services .service:nth-child(n){margin-top:0}.portfolio{grid-auto-rows:220px}.work.big{grid-row:span 1}.contact{flex-direction:column;align-items:flex-start}.cursor,.cursor-ring{display:none}}
+
+.account-badge{display:inline-flex}
+@media(max-width:800px){.navlinks{align-items:stretch}}
+
+/* BLAZE STUDIO Stage 4 — client/owner workspace */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.stat{padding:16px;border:1px solid var(--line);border-radius:20px;background:#ffffff05}.stat b{display:block;font:800 25px "Space Grotesk"}.stat span{color:var(--muted);font-size:11px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.toolbar input,.toolbar select,.mini-input{padding:11px 13px;border-radius:14px;border:1px solid var(--line);background:#ffffff06;color:#fff;outline:none;font:inherit}.toolbar input{flex:1;min-width:180px}.order-card{padding:17px;border:1px solid #ffffff10;border-radius:20px;margin:10px 0;background:linear-gradient(145deg,#ffffff07,#ffffff02)}.order-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}.status{display:inline-flex;padding:6px 10px;border-radius:999px;background:#963fff18;color:#d6b0ff;font-size:11px}.timeline{display:grid;gap:8px;margin-top:12px}.timeline .event{padding:10px 12px;border-right:2px solid #9b4dff55;background:#ffffff04;border-radius:12px;font-size:12px}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.message{padding:11px 13px;border-radius:16px;background:#ffffff05;border:1px solid #ffffff0a;margin:7px 0}.message.owner-msg{border-color:#a858ff44}.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:#ffffff08;color:#ddd;font-size:11px}.drop{border:1px dashed #a858ff66;padding:18px;border-radius:18px;text-align:center;margin-top:10px;transition:.2s}.drop.dragover{border-color:#c88dff;background:#963fff16;transform:translateY(-1px)}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.tabs button{border:1px solid var(--line);background:#ffffff05;color:#ddd;border-radius:999px;padding:9px 12px;cursor:pointer}.tabs button.on{background:#963fff22;color:#fff;border-color:#a858ff66}.danger{border-color:#ff5d7a44!important}.success{color:#8ff0b0}.warn{color:#ffd37a}.danger-text{color:#ff9aaa}.small{font-size:11px}.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}.modalbox.wide{width:min(1050px,100%);max-height:88vh;overflow:auto}.modalbox.xwide{width:min(1180px,100%);max-height:92vh;overflow:auto}.owner-nav{display:flex;gap:8px;flex-wrap:wrap}.owner-nav button{border:1px solid var(--line);background:#ffffff06;color:#ddd;border-radius:13px;padding:9px 12px;cursor:pointer}.owner-nav button.on{background:#963fff22;color:#fff;border-color:#a858ff66}
+@media(max-width:800px){.stats,.detail-grid,.two{grid-template-columns:1fr}.modalbox.xwide,.modalbox.wide{width:100%}}
+
+.delivery-card{border:1px solid rgba(168,85,247,.28);background:linear-gradient(135deg,rgba(168,85,247,.10),rgba(255,255,255,.025));border-radius:22px;padding:18px;margin-top:12px}.delivery-file{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-top:1px solid var(--line)}.delivery-file:first-child{border-top:0}.delivery-final{color:#d8b4fe}.delivery-actions{display:flex;gap:8px;flex-wrap:wrap}
+</style>
+
+<style id="blaze-status-system">
+.blaze-status-card{margin-top:16px;padding:18px;border:1px solid rgba(170,100,255,.22);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(130,70,255,.055));backdrop-filter:blur(12px)}
+.blaze-status-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.blaze-status-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;background:rgba(150,90,255,.12);border:1px solid rgba(170,100,255,.25)}
+.blaze-progress{height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin:12px 0}
+.blaze-progress>span{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#8f4dff,#d06cff);transition:width .45s ease}
+.blaze-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;font-size:10px;color:#8f8998}
+.blaze-step.active{color:#fff;font-weight:700}
+.blaze-status-select{padding:9px 12px;border-radius:12px;background:#17131e;color:#fff;border:1px solid rgba(170,100,255,.28)}
+</style>
+</head>
+<body>
+<div class="loader" id="loader"><div class="loadbox"><div class="loadlogo">BLAZE <span style="color:#a653ff">STUDIO</span></div><div class="bar"><i></i></div><small style="color:#777">CREATIVE POST-PRODUCTION</small></div></div>
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="ring"></div>
+<nav>
+<div class="brand">BLAZE <span>STUDIO</span></div>
+<div class="navlinks">
+<a href="#home">Home</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#order">Order</a><a class="owner" href="#order" style="background:linear-gradient(135deg,#6f2cff,#a94dff)!important">ثبت سفارش</a><a href="#contact">Contact</a>
+<a href="#" onclick="openAuth();return false">Account</a><a class="owner" href="#" onclick="openOwner();return false">Owner</a>
+</div>
+<button class="menu" id="menu">☰</button>
+</nav>
+<main id="home">
+<section class="hero"><div class="orb o1"></div><div class="orb o2"></div><div class="hero-inner">
+<div class="eyebrow"><span class="dot"></span> PURPLE BLAZE · VIDEO EDITING STUDIO</div>
+<h1>BLAZE<br/>STUDIO</h1>
+<p class="lead">EDIT. CREATE. BLAZE.<br/>تدوین حرفه‌ای، ادیت سینمایی و پست‌پروداکشن خلاقانه برای پروژه‌هایی که قرار نیست معمولی دیده شوند.</p>
+<div class="actions"><a class="btn primary" href="#order">Build Your Project ↗</a><a class="btn secondary" href="#portfolio">View Portfolio</a></div>
+<div class="scroll">SCROLL TO EXPLORE ↓</div>
+</div></section>
+<section id="why"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">WHY BLAZE</div><h2>هر فریم، با<br/>شخصیت خودش.</h2></div><p class="sub">یک استودیوی خلاق برای ادیت‌هایی که باید حس داشته باشند؛ از ریتم و صدا تا رنگ و جزئیات.</p></div>
+<div class="why"><article class="tile reveal"><h3>Creative Editing</h3><p>تدوین خلاقانه با ریتم، ترنزیشن و روایت متناسب با خود پروژه؛ نه یک قالب تکراری.</p><span class="num">01</span></article><article class="tile reveal"><h3>Cinematic Quality</h3><p>تمرکز روی رنگ، نور، صدا و جزئیات تصویری.</p></article><article class="tile reveal"><h3>Fast Communication</h3><p>ارتباط ساده و مستقیم برای جلو رفتن سریع پروژه.</p></article><article class="tile reveal"><h3>Attention to Detail</h3><p>ریزکاری‌هایی که خروجی نهایی را متفاوت می‌کنند.</p></article></div></div></section>
+<section id="services"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">SERVICES</div><h2>از خام تا<br/>خیره‌کننده.</h2></div><p class="sub">قیمت‌های ساده و اقتصادی برای شروع همکاری.</p></div>
+<div class="services">
+<article class="service reveal"><div class="kicker">01 · LONG FORM</div><h3>Video Editing</h3><p class="muted">ادیت حرفه‌ای ویدیوهای طولانی، یوتیوب و محتوای خلاقانه.</p><div class="price">۸۰۰,۰۰۰ تومان <small class="muted">از</small></div><button class="btn primary select" onclick="choose('Video Editing',800000)">Select Service</button></article>
+<article class="service reveal"><div class="kicker">02 · SOCIAL</div><h3>Shorts / Reels</h3><p class="muted">ویدیوهای کوتاه، ریتمیک و مناسب شبکه‌های اجتماعی.</p><div class="price">۴۰۰,۰۰۰ تومان <small class="muted">از</small></div><button class="btn primary select" onclick="choose('Shorts / Reels',400000)">Select Service</button></article>
+<article class="service reveal"><div class="kicker">03 · CINEMATIC</div><h3>Teaser</h3><p class="muted">تیزرهای سینمایی با تمرکز روی حس، ریتم و صدا.</p><div class="price">۱,۰۰۰,۰۰۰ تومان <small class="muted">از</small></div><button class="btn primary select" onclick="choose('Teaser',1000000)">Select Service</button></article>
+</div></div></section>
+<section id="portfolio"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">SELECTED WORK</div><h2>Portfolio.</h2></div><p class="sub">جای پروژه‌های واقعی تو این بخش قرار می‌گیرد.</p></div>
+<div class="portfolio"><article class="work big reveal"><div><span class="tag">Cinematic Teaser</span><h3>ESCAPE / TEASER</h3></div></article><article class="work reveal"><div><span class="tag">Automotive</span><h3>Motion Drive</h3></div></article><article class="work reveal"><div><span class="tag">Shorts / Reels</span><h3>Fast Cut</h3></div></article><article class="work reveal"><div><span class="tag">Social Media</span><h3>Night Edit</h3></div></article><article class="work reveal"><div><span class="tag">Creative Edit</span><h3>After Dark</h3></div></article></div></div></section>
+<section id="order"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">ORDER BUILDER</div><h2>پروژه‌ات را<br/>بساز.</h2></div><p class="sub">گزینه‌ها را انتخاب کن؛ قیمت لحظه‌ای محاسبه می‌شود.</p></div>
+<div class="orderbox"><div class="panel reveal"><div class="steps"><span class="step active">1 Service</span><span class="step active">2 Duration</span><span class="step active">3 Style</span><span class="step active">4 Deadline</span></div>
+<h3>Service</h3><div class="choices" id="serviceChoices"><button class="choice on" onclick="setService(this,'Video Editing',800000)">Video Editing</button><button class="choice" onclick="setService(this,'Shorts / Reels',400000)">Shorts / Reels</button><button class="choice" onclick="setService(this,'Teaser',1000000)">Teaser</button></div>
+<h3>Duration</h3><div class="choices"><button class="choice on" onclick="setChoice(this)">Up to 60 seconds</button><button class="choice" onclick="setChoice(this)">1–3 minutes</button><button class="choice" onclick="setChoice(this)">3–10 minutes</button></div>
+<h3>Style</h3><div class="choices"><button class="choice" onclick="setChoice(this)">Modern</button><button class="choice on" onclick="setChoice(this)">Cinematic</button><button class="choice" onclick="setChoice(this)">Minimal</button><button class="choice" onclick="setChoice(this)">Energetic</button></div>
+<h3>Deadline</h3><div class="choices"><button class="choice on" onclick="setDeadline(this,false)">Normal</button><button class="choice" onclick="setDeadline(this,true)">Fast +۳۵۰,۰۰۰</button></div>
+<h3>Add-ons</h3><div class="choices">
+<button class="choice addon" data-price="150000" onclick="toggleAddon(this,'Subtitles')">Subtitles · +۱۵۰,۰۰۰</button>
+<button class="choice addon" data-price="250000" onclick="toggleAddon(this,'Sound Design')">Sound Design · +۲۵۰,۰۰۰</button>
+<button class="choice addon" data-price="200000" onclick="toggleAddon(this,'Color Grading')">Color Grading · +۲۰۰,۰۰۰</button>
+<button class="choice addon" data-price="300000" onclick="toggleAddon(this,'Motion Graphics')">Motion Graphics · +۳۰۰,۰۰۰</button>
+<button class="choice addon" data-price="200000" onclick="toggleAddon(this,'Extra Revision')">Extra Revision · +۲۰۰,۰۰۰</button>
+</div></div>
+<div class="panel reveal" style="margin-top:16px">
+<div class="kicker">CUSTOMER INFORMATION</div>
+<div class="field"><input id="customerName" placeholder="نام شما"/></div>
+<div class="field"><input id="contactId" placeholder="آیدی تماس، مثلاً @blazeali"/></div>
+<div class="field"><input id="deadlineText" placeholder="توضیحات / ددلاین پروژه"/></div>
+<div class="file-picker">
+<input id="blazeOrderFiles" multiple="" type="file"/>
+<label class="file-picker-label" for="blazeOrderFiles">📎 انتخاب فایل‌های پروژه</label>
+<span class="file-name" id="blazeOrderFileName">هنوز فایلی انتخاب نشده</span>
+</div>
+<div class="field"><select id="prioritySelect" style="width:100%;padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:#ffffff06;color:#fff;font:inherit"><option value="normal">اولویت عادی</option><option value="urgent">فوری +۳۵۰,۰۰۰ تومان</option></select></div>
+</div>
+<div class="panel reveal"><div class="kicker">LIVE SUMMARY</div><div class="summary-row"><span>Base price</span><b id="base">۸۰۰,۰۰۰ تومان</b></div><div id="addonRows"></div><div class="summary-row"><span>Total</span><b class="total" id="total">۸۰۰,۰۰۰</b></div><button class="btn primary copy" onclick="submitOrder()">✅ ثبت سفارش</button><button class="btn secondary copy" onclick="copyRequest()">📋 Copy Request</button><button class="btn secondary copy" onclick="openAuth()">Account / Login</button><p class="muted" id="copied"></p><p class="muted">فایل‌های پروژه بعد از ثبت سفارش از بخش Account → Files به‌صورت خصوصی آپلود می‌شوند.</p></div></div></div></section>
+<section id="contact"><div class="wrap"><div class="contact reveal"><div><div class="kicker">CONTACT</div><h2 style="font-size:38px;margin-top:8px">@blazeali</h2><p class="muted">برای شروع پروژه، درخواستت را کپی کن و بفرست.</p></div><button class="btn primary" onclick="copyText('@blazeali')">Copy Contact</button></div></div></section>
+</main>
+<footer>BLAZE STUDIO · BlazeAli · Purple Blaze · © 2026</footer>
+<div class="modal" id="auth"><div class="modalbox">
+<button class="close" onclick="closeAuth()">×</button>
+<div class="kicker">BLAZE ACCOUNT</div>
+<h2 id="authTitle" style="font-size:34px;margin-top:10px">Create your account.</h2>
+<p class="muted" id="authSub">ثبت‌نام کن تا سفارش‌ها و حساب کاربری‌ات ذخیره شود.</p>
+<div class="field" id="nameField"><input id="name" placeholder="Name"/></div>
+<div class="field"><input id="email" placeholder="Email" type="email"/></div>
+<div class="field"><input id="pass" placeholder="Password" type="password"/></div>
+<button class="btn primary" id="authSubmit" onclick="submitAuth()" style="width:100%">Create Account</button>
+<button class="btn secondary copy" id="authToggle" onclick="toggleAuthMode()">Already have an account? Login</button>
+<p class="muted" id="authmsg"></p>
+</div></div>
+<div class="modal" id="accountModal"><div class="modalbox wide">
+<button class="close" onclick="closeAccount()">×</button>
+<div class="kicker">MY ACCOUNT</div>
+<div class="order-top"><div><h2 id="accountName" style="font-size:34px;margin:10px 0">Account</h2><p class="muted" id="accountEmail"></p></div><div><span class="pill" id="accountLevel">NEW</span><span class="pill" id="accountPoints">0 pts</span></div></div>
+<div class="tabs"><button class="on" onclick="accountTab('orders',this)">📦 Orders</button><button onclick="accountTab('messages',this)">💬 Messages</button><button onclick="accountTab('revisions',this)">🔄 Revisions</button><button onclick="accountTab('files',this)">📁 Files</button><button onclick="accountTab('invoice',this)">💰 Invoice</button></div>
+<div id="accountContent"></div>
+<button class="btn secondary copy" onclick="logout()">Logout</button>
+</div></div>
+<div class="modal" id="ownerModal"><div class="modalbox xwide"><button class="close" onclick="closeOwner()">×</button>
+<div class="kicker">OWNER PANEL</div><div class="order-top"><div><h2 style="font-size:34px;margin:10px 0">BLAZE CONTROL CENTER</h2><p class="muted">مدیریت سفارش، مشتری، فایل، پیام، اصلاحیه و فاکتور</p></div><div class="owner-nav"><button class="on" onclick="ownerTab('dashboard',this)">📊 Dashboard</button><button onclick="ownerTab('orders',this)">📦 Orders</button><button onclick="ownerTab('clients',this)">👥 Clients</button></div></div>
+<div id="ownerContent"></div></div></div>
+<div class="modal" id="orderDetailModal"><div class="modalbox xwide"><button class="close" onclick="closeOrderDetail()">×</button><div id="orderDetailContent"></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL="https://gavepbzjjraciqhbqiug.supabase.co";
+const SUPABASE_ANON_KEY="sb_publishable_wj6aVnL54hekKuipUmEqdA_y85Ed-9g";
+const supabaseReady=SUPABASE_URL.startsWith('http')&&!SUPABASE_ANON_KEY.includes('YOUR_');
+const sb=supabaseReady?window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY):null;
+const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
+let base=800000,service='Video Editing',addons=[],currentUser=null,currentOrder=null,ownerMode='dashboard',accountMode='orders';
+const statuses={pending:'Pending',in_progress:'In Progress',completed:'Completed',cancelled:'Cancelled'};
+const levels={new:'NEW',regular:'REGULAR',vip:'VIP',blaze_vip:'BLAZE VIP 👑'};
+const fmt=n=>(Number(n)||0).toLocaleString('fa-IR');
+window.addEventListener('load',()=>setTimeout(()=>$('#loader')?.classList.add('hide'),700));
+function setService(el,n,p){$$('#serviceChoices .choice').forEach(x=>x.classList.remove('on'));el.classList.add('on');service=n;base=p;render()}
+function setChoice(el){[...el.parentElement.children].forEach(x=>x.classList.remove('on'));el.classList.add('on')}
+function setDeadline(el,fast){[...el.parentElement.children].forEach(x=>x.classList.remove('on'));el.classList.add('on');let i=addons.findIndex(x=>x.name==='Fast Delivery');if(i>=0)addons.splice(i,1);if(fast)addons.push({name:'Fast Delivery',price:350000});render()}
+function toggleAddon(el,name){el.classList.toggle('on');let i=addons.findIndex(x=>x.name===name);if(i>=0)addons.splice(i,1);else addons.push({name,price:+el.dataset.price});render()}
+function render(){let priority=$('#prioritySelect')?.value==='urgent'?350000:0;let sum=base+addons.reduce((a,b)=>a+b.price,0)+priority;$('#base').textContent=fmt(base)+' تومان';$('#total').textContent=fmt(sum);$('#addonRows').innerHTML=addons.map(x=>`<div class="summary-row"><span>${x.name}</span><span>+${fmt(x.price)}</span></div>`).join('')+(priority?`<div class="summary-row"><span>Urgent</span><span>+${fmt(priority)}</span></div>`:'')}
+function choose(n,p){service=n;base=p;document.querySelector('#order').scrollIntoView({behavior:'smooth'});render()}
+function requestText(){let priority=$('#prioritySelect')?.value||'normal',sum=base+addons.reduce((a,b)=>a+b.price,0)+(priority==='urgent'?350000:0);return `BLAZE STUDIO — PROJECT REQUEST\n\nService: ${service}\nOptions: ${addons.length?addons.map(x=>x.name).join(', '):'None'}\nPriority: ${priority}\nEstimated Total: ${sum.toLocaleString('en-US')} تومان\n\nName: ...\nContact ID: ...\nDescription: ...\nContact: @blazeali`}
+async function copyText(t){try{await navigator.clipboard.writeText(t)}catch(e){let x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove()}}
+async function copyRequest(){await copyText(requestText());$('#copied').textContent='✓ درخواست کپی شد.';setTimeout(()=>$('#copied').textContent='',2500)}
+function openAuth(){if(supabaseReady&&currentUser){showAccount();return}$('#auth').classList.add('open')}
+function closeAuth(){$('#auth').classList.remove('open')}
+function toggleAuthMode(){authMode=authMode==='signup'?'login':'signup';$('#authTitle').textContent=authMode==='signup'?'Create your account.':'Welcome back.';$('#authSub').textContent=authMode==='signup'?'ثبت‌نام کن تا سفارش‌ها و حساب کاربری‌ات ذخیره شود.':'وارد حساب BLAZE STUDIO شو.';$('#nameField').style.display=authMode==='signup'?'block':'none';$('#authSubmit').textContent=authMode==='signup'?'Create Account':'Login';$('#authToggle').textContent=authMode==='signup'?'Already have an account? Login':'Need an account? Register';$('#authmsg').textContent=''}
+let authMode='signup';
+async function submitAuth(){if(!supabaseReady){$('#authmsg').textContent='⚠️ Supabase تنظیم نشده است.';return}const email=$('#email').value.trim(),password=$('#pass').value;if(!email||!password){$('#authmsg').textContent='ایمیل و رمز را وارد کن.';return}$('#authSubmit').disabled=true;try{if(authMode==='signup'){const name=$('#name').value.trim()||'Blaze User';const {data,error}=await sb.auth.signUp({email,password,options:{data:{name}}});if(error)throw error;if(data.session){currentUser=data.user;await ensureProfile();closeAuth();showAccount()}else $('#authmsg').textContent='✓ ثبت‌نام شد؛ ایمیل را تأیید کن.'}else{const {data,error}=await sb.auth.signInWithPassword({email,password});if(error)throw error;currentUser=data.user;await ensureProfile();closeAuth();showAccount()}}catch(e){$('#authmsg').textContent='⚠️ '+e.message}finally{$('#authSubmit').disabled=false}}
+async function ensureProfile(){if(!sb||!currentUser)return;await sb.from('profiles').upsert({user_id:currentUser.id,display_name:currentUser.user_metadata?.name||'Blaze User'},{onConflict:'user_id'})}
+async function getProfile(userId){const {data}=await sb.from('profiles').select('*').eq('user_id',userId).maybeSingle();return data||{client_level:'new',loyalty_points:0,display_name:'Blaze User'}}
+async function showAccount(){if(!sb)return;const {data:{user}}=await sb.auth.getUser();if(!user)return;currentUser=user;const p=await getProfile(user.id);$('#accountName').textContent=p.display_name||user.user_metadata?.name||'Blaze User';$('#accountEmail').textContent=user.email||'';$('#accountLevel').textContent=levels[p.client_level]||'NEW';$('#accountPoints').textContent=fmt(p.loyalty_points)+' pts';$('#accountModal').classList.add('open');await accountTab(accountMode)}
+function closeAccount(){$('#accountModal').classList.remove('open')}
+async function logout(){if(sb)await sb.auth.signOut();currentUser=null;closeAccount();openAuth();if(authMode==='login')toggleAuthMode()}
+async function accountTab(tab,btn){accountMode=tab;if(btn){$$('#accountModal .tabs button').forEach(x=>x.classList.remove('on'));btn.classList.add('on')}let el=$('#accountContent');el.innerHTML='<div class="muted">Loading...</div>';if(!currentUser)return;
+ if(tab==='orders'){let {data,error}=await sb.from('orders').select('*').eq('user_id',currentUser.id).order('created_at',{ascending:false});if(error){el.innerHTML=`<div class="muted">⚠️ ${esc(error.message)}</div>`;return}el.innerHTML=data?.length?data.map(orderCard).join(''):'<div class="muted">هنوز سفارشی ثبت نشده.</div>'}
+ if(tab==='messages'){let {data:ords}=await sb.from('orders').select('id,service').eq('user_id',currentUser.id);let ids=(ords||[]).map(x=>x.id);let {data}=ids.length?await sb.from('order_messages').select('*').in('order_id',ids).order('created_at',{ascending:false}):{data:[]};let map=Object.fromEntries((ords||[]).map(x=>[x.id,x.service]));el.innerHTML=data?.length?data.map(m=>`<div class="message"><b>${esc(map[m.order_id]||'Order')}</b><div>${esc(m.message)}</div><span class="small muted">${new Date(m.created_at).toLocaleString('fa-IR')}</span></div>`).join(''):'<div class="muted">پیامی نیست.</div>'}
+ if(tab==='revisions'){let {data:ords}=await sb.from('orders').select('id,service').eq('user_id',currentUser.id);let ids=(ords||[]).map(x=>x.id);let {data}=ids.length?await sb.from('revisions').select('*').in('order_id',ids).order('created_at',{ascending:false}):{data:[]};let map=Object.fromEntries((ords||[]).map(x=>[x.id,x.service]));el.innerHTML=data?.length?data.map(r=>`<div class="message"><b>${esc(map[r.order_id]||'Order')}</b><span class="pill">${esc(r.status)}</span><div>${esc(r.note)}</div></div>`).join(''):'<div class="muted">درخواستی برای اصلاح ثبت نشده.</div>'}
+ if(tab==='files'){let {data:ords}=await sb.from('orders').select('id,service,status').eq('user_id',currentUser.id).order('created_at',{ascending:false});let ids=(ords||[]).map(x=>x.id);let {data}=ids.length?await sb.from('order_files').select('*').in('order_id',ids).order('created_at',{ascending:false}):{data:[]};let grouped=Object.fromEntries((ords||[]).map(o=>[o.id,[]]));(data||[]).forEach(f=>(grouped[f.order_id]||(grouped[f.order_id]=[])).push(f));el.innerHTML=(ords||[]).length?ords.map(o=>`<div class="order-card"><div class="order-top"><div><b>📁 ${esc(o.service||'Project')}</b><div class="muted">Order #${esc(String(o.id).slice(0,12))} · ${statuses[o.status]||o.status}</div></div><span class="pill">Private Vault</span></div><div class="drop" id="drop_${o.id}" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="handleDrop(event,'${o.id}')"><div style="font-size:28px">📤</div><b>فایل پروژه را اینجا رها کن</b><div class="small muted">یا انتخاب فایل — ویدیو، عکس، صدا، ZIP/RAR</div><input id="pick_${o.id}" type="file" multiple style="display:none" onchange="uploadClientFiles('${o.id}',this.files)"><button class="btn primary" onclick="document.getElementById('pick_${o.id}').click()">+ انتخاب فایل</button><div id="up_${o.id}" class="small muted" style="margin-top:8px"></div></div><div style="margin-top:10px">${(grouped[o.id]||[]).map(f=>`<div class="summary-row"><span>📄 ${esc(f.file_name)} <small class="muted"> · ${fmtBytes(f.size||0)} · ${esc(f.kind||'file')}</small></span><button class="btn secondary" onclick="downloadFile('${escAttr(f.storage_path)}')">باز کردن</button></div>`).join('')||'<div class="muted">هنوز فایلی برای این سفارش نیست.</div>'}</div></div>`).join(''):'<div class="muted">هنوز سفارشی برای آپلود فایل وجود ندارد.</div>'}
+ if(tab==='invoice'){let {data}=await sb.from('invoices').select('*,orders(service)').eq('user_id',currentUser.id).order('created_at',{ascending:false});el.innerHTML=data?.length?data.map(i=>`<div class="order-card"><b>${esc(i.orders?.service||'Order')}</b><div class="summary-row"><span>Amount</span><span>${fmt(i.amount)} تومان</span></div><div class="summary-row"><span>Status</span><span class="${i.status==='paid'?'success':'warn'}">${i.status}</span></div></div>`).join(''):'<div class="muted">هنوز فاکتوری صادر نشده.</div>'}
+}
+function orderCard(o){return `<div class="order-card"><div class="order-top"><div><b>${esc(o.service||'Project')}</b><div class="muted">#${esc(String(o.order_number||o.id).slice(0,12))} · ${fmt(o.final_price??o.total)} تومان</div></div><span class="status">${statuses[o.status]||o.status||'Pending'}</span></div><div class="summary-row"><span>Updated</span><span>${o.updated_at?new Date(o.updated_at).toLocaleString('fa-IR'):''}</span></div><button class="btn secondary" onclick="openOrderDetail('${o.id}')">جزئیات سفارش</button></div>`}
+function esc(x){return String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function escAttr(x){return esc(x).replace(/`/g,'')}
+async function submitOrder(){
+ const msg=$('#copied');
+ if(!supabaseReady){msg.textContent='⚠️ Supabase تنظیم نشده است.';return}
+ const {data:{user}}=await sb.auth.getUser();
+ if(!user){msg.textContent='🔐 برای ثبت سفارش ابتدا وارد حساب شوید.';openAuth();return}
+ const priority=$('#prioritySelect')?.value||'normal';
+ const sum=base+addons.reduce((a,b)=>a+b.price,0)+(priority==='urgent'?350000:0);
+ const customerName=$('#customerName')?.value.trim()||user.user_metadata?.name||'Blaze User';
+ const contactId=$('#contactId')?.value.trim()||'';
+ const description=$('#deadlineText')?.value.trim()||'';
+ const {data,error}=await sb.from('orders').insert({user_id:user.id,studio:'BLAZE',service,duration:'Up to 60 seconds',style:'Cinematic',deadline:description||'Normal',options:addons.map(x=>x.name),total:sum,status:'pending',customer_name:customerName,contact_id:contactId,description}).select().single();
+ if(error){msg.textContent='⚠️ ثبت سفارش انجام نشد: '+error.message;return}
+ const selected=[...($('#blazeOrderFiles')?.files||[])];
+ let failed=0;
+ for(const file of selected){
+   const safe=file.name.replace(/[^\w.\-]+/g,'_');
+   const path=`${user.id}/${data.id}/${Date.now()}_${safe}`;
+   const {error:up}=await sb.storage.from('project-files').upload(path,file,{upsert:false});
+   if(up){failed++;continue}
+   const {error:fr}=await sb.from('order_files').insert({order_id:data.id,user_id:user.id,file_name:file.name,storage_path:path,file_type:file.type,size:file.size,kind:'client-upload'});
+   if(fr) failed++;
+ }
+ msg.textContent=failed?`✅ سفارش ثبت شد؛ اما ${failed} فایل آپلود نشد.`:`✅ سفارش ثبت شد! شماره سفارش: ${data.order_number||data.id}`;
+ if($('#blazeOrderFiles')){$('#blazeOrderFiles').value='';$('#blazeOrderFileName').textContent='هنوز فایلی انتخاب نشده'}
+ await ensureProfile();setTimeout(showAccount,500)
+}
+async function isOwner(){if(!sb)return false;const {data,error}=await sb.rpc('is_owner');return !error&&data===true}
+async function openOwner(){if(!supabaseReady){alert('Supabase is not configured.');return}if(!(await isOwner())){alert('⛔ این اکانت Owner نیست. UUID حساب باید داخل جدول owners باشد.');return}$('#ownerModal').classList.add('open');ownerTab(ownerMode)}
+function closeOwner(){$('#ownerModal').classList.remove('open')}
+async function ownerTab(tab,btn){ownerMode=tab;if(btn){$$('.owner-nav button').forEach(x=>x.classList.remove('on'));btn.classList.add('on')}if(tab==='dashboard')return renderOwnerDashboard();if(tab==='orders')return renderOwnerOrders();if(tab==='clients')return renderOwnerClients()}
+async function renderOwnerDashboard(){let [{data:orders},{data:profiles}]=await Promise.all([sb.from('orders').select('*').order('created_at',{ascending:false}),sb.from('profiles').select('*')]);orders=orders||[];let revenue=orders.filter(o=>o.status==='completed').reduce((a,o)=>a+Number(o.final_price??o.total??0),0);$('#ownerContent').innerHTML=`<div class="stats"><div class="stat"><b>${orders.length}</b><span>کل سفارش‌ها</span></div><div class="stat"><b>${orders.filter(o=>o.status==='pending').length}</b><span>Pending</span></div><div class="stat"><b>${orders.filter(o=>o.status==='in_progress').length}</b><span>In Progress</span></div><div class="stat"><b>${fmt(revenue)}</b><span>درآمد تکمیل‌شده · تومان</span></div></div><div class="order-card"><h3>🔥 Live Status</h3><p class="muted">${orders[0]?`آخرین سفارش: ${esc(orders[0].service)} — ${statuses[orders[0].status]||orders[0].status}`:'هنوز سفارشی وجود ندارد.'}</p></div><div class="order-card"><h3>🏆 Client Levels</h3><p class="muted">${(profiles||[]).map(p=>`${esc(p.display_name)}: ${levels[p.client_level]||p.client_level} · ${fmt(p.loyalty_points)} pts`).join(' · ')||'No clients'}</p></div>`}
+async function renderOwnerOrders(){let {data,error}=await sb.from('orders').select('*').order('created_at',{ascending:false});if(error){$('#ownerContent').innerHTML=`<div class="muted">⚠️ ${esc(error.message)}</div>`;return}window.ownerOrdersData=data||[];$('#ownerContent').innerHTML=`<div class="toolbar"><input id="ownerSearch" placeholder="جستجو نام، ایمیل یا شماره سفارش" oninput="filterOwnerOrders()"><select id="ownerFilter" onchange="filterOwnerOrders()"><option value="all">All</option><option value="pending">Pending</option><option value="in_progress">In Progress</option><option value="completed">Completed</option><option value="cancelled">Cancelled</option></select></div><div id="ownerOrderList"></div>`;filterOwnerOrders()}
+function filterOwnerOrders(){let q=($('#ownerSearch')?.value||'').toLowerCase(),f=$('#ownerFilter')?.value||'all';let list=(window.ownerOrdersData||[]).filter(o=>(f==='all'||o.status===f)&&(`${o.customer_name||''} ${o.contact_id||''} ${o.order_number||''} ${o.service||''}`).toLowerCase().includes(q));$('#ownerOrderList').innerHTML=list.length?list.map(o=>`<div class="order-card"><div class="order-top"><div><b>${esc(o.service)}</b><div class="muted">${esc(o.customer_name||'')} · ${esc(o.contact_id||'')} · #${esc(o.order_number||o.id)}</div></div><span class="status">${statuses[o.status]||o.status}</span></div><div class="two"><select id="st_${o.id}" class="mini-input">${Object.entries(statuses).map(([k,v])=>`<option value="${k}" ${o.status===k?'selected':''}>${v}</option>`).join('')}</select><input id="pr_${o.id}" class="mini-input" value="${o.final_price??o.total??0}" placeholder="Final price"></div><div class="toolbar"><button class="btn primary" onclick="saveOrder('${o.id}')">Save</button><button class="btn secondary" onclick="openOrderDetail('${o.id}')">Details</button><button class="btn secondary" onclick="addInvoice('${o.id}')">💰 Invoice</button></div></div>`).join(''):'<div class="muted">سفارشی پیدا نشد.</div>'}
+async function saveOrder(id){if(!(await isOwner()))return;let status=$(`#st_${id}`).value,price=Number($(`#pr_${id}`).value)||0;let {error}=await sb.from('orders').update({status,final_price:price,updated_at:new Date().toISOString()}).eq('id',id);if(error){alert('⚠️ '+error.message);return}await sb.from('notifications').insert({user_id:(window.ownerOrdersData.find(x=>x.id===id)||{}).user_id,order_id:id,type:'status',title:'Order updated',body:`وضعیت سفارش به ${statuses[status]} تغییر کرد.`});await renderOwnerOrders()}
+async function renderOwnerClients(){let {data,error}=await sb.from('profiles').select('*').order('created_at',{ascending:false});if(error){$('#ownerContent').innerHTML=`<div class="muted">⚠️ ${esc(error.message)}</div>`;return}$('#ownerContent').innerHTML=`<div class="toolbar"><input id="clientSearch" placeholder="جستجوی مشتری" oninput="filterClients()"></div><div id="clientList">${(data||[]).map(p=>clientCard(p)).join('')}</div>`;window.ownerProfiles=data||[]}
+function clientCard(p){return `<div class="order-card"><div class="order-top"><div><b>${esc(p.display_name)}</b><div class="muted">${esc(p.user_id)}</div></div><span class="pill">${levels[p.client_level]||p.client_level} · ${fmt(p.loyalty_points)} pts</span></div><div class="toolbar"><select id="lvl_${p.user_id}" class="mini-input">${Object.entries(levels).map(([k,v])=>`<option value="${k}" ${p.client_level===k?'selected':''}>${v}</option>`).join('')}</select><input id="pts_${p.user_id}" class="mini-input" value="${p.loyalty_points||0}"><button class="btn primary" onclick="saveClient('${p.user_id}')">Save</button><button class="btn secondary" onclick="toggleOwner('${p.user_id}')">👑 Toggle Owner</button></div></div>`}
+function filterClients(){let q=($('#clientSearch')?.value||'').toLowerCase();$('#clientList').innerHTML=(window.ownerProfiles||[]).filter(p=>`${p.display_name} ${p.user_id}`.toLowerCase().includes(q)).map(clientCard).join('')}
+async function saveClient(id){let client_level=$(`#lvl_${id}`).value,loyalty_points=Number($(`#pts_${id}`).value)||0;let {error}=await sb.from('profiles').update({client_level,loyalty_points}).eq('user_id',id);if(error)alert('⚠️ '+error.message);else renderOwnerClients()}
+async function toggleOwner(id){if(!(await isOwner()))return;let {data:existing}=await sb.from('owners').select('user_id').eq('user_id',id).maybeSingle();let res=existing?await sb.from('owners').delete().eq('user_id',id):await sb.from('owners').insert({user_id:id});if(res.error)alert('⚠️ '+res.error.message);else renderOwnerClients()}
+async function openOrderDetail(id){
+  let {data:o,error}=await sb.from('orders').select('*').eq('id',id).single();
+  if(error){alert(error.message);return}
+  currentOrder=o;
+  let [{data:msgs},{data:revs},{data:files},{data:inv}]=await Promise.all([
+    sb.from('order_messages').select('*').eq('order_id',id).order('created_at'),
+    sb.from('revisions').select('*').eq('order_id',id).order('created_at',{ascending:false}),
+    sb.from('order_files').select('*').eq('order_id',id).order('created_at',{ascending:false}),
+    sb.from('invoices').select('*').eq('order_id',id).order('created_at',{ascending:false})
+  ]);
+  let owner=await isOwner();
+  const finalFiles=(files||[]).filter(f=>f.kind==='final' || f.kind==='owner-final');
+  const revisionLabel={requested:'درخواست شده',in_progress:'در حال انجام',resolved:'انجام شد',rejected:'رد شد'};
+  $('#orderDetailContent').innerHTML=`
+    <div class="kicker">ORDER DETAIL</div>
+    <h2 style="font-size:32px">${esc(o.service)} <span class="status">${statuses[o.status]||o.status}</span></h2>
+    <div class="detail-grid">
+      <div class="panel"><b>👤 Customer</b><p class="muted">${esc(o.customer_name||'')}<br>${esc(o.contact_id||'')}<br>${esc(o.description||'')}</p></div>
+      <div class="panel"><b>💰 Price</b><p class="total">${fmt(o.final_price??o.total)} <small>تومان</small></p><span class="pill">${esc(o.priority||'normal')}</span></div>
+    </div>
+    <div class="panel" style="margin-top:12px"><b>🕐 Timeline</b><div class="timeline"><div class="event">🟣 ثبت سفارش — ${new Date(o.created_at).toLocaleString('fa-IR')}</div><div class="event">🔵 وضعیت فعلی — ${statuses[o.status]||o.status}</div></div></div>
+    <div class="detail-grid" style="margin-top:12px">
+      <div class="panel">
+        <b>💬 Project Chat</b>
+        <div id="detailMessages">${(msgs||[]).map(m=>`<div class="message ${m.user_id!==o.user_id?'owner-msg':''}"><b>${m.user_id===o.user_id?'👤 Client':'👑 Owner'}</b><div>${esc(m.message)}</div><div class="small muted">${new Date(m.created_at).toLocaleString('fa-IR')}</div></div>`).join('')||'<div class="muted">هنوز پیامی نیست.</div>'}</div>
+        <textarea id="messageText" style="width:100%;min-height:90px;margin-top:8px;background:#ffffff06;color:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;font:inherit" placeholder="پیام خود را بنویس..."></textarea>
+        <button class="btn primary" onclick="sendMessage('${id}')">💬 ارسال پیام</button>
+      </div>
+      <div class="panel">
+        <b>🔄 Revision</b>
+        ${(revs||[]).map(r=>`<div class="message"><div><span class="pill">${esc(revisionLabel[r.status]||r.status)}</span> ${new Date(r.created_at).toLocaleString('fa-IR')}</div><div style="margin-top:7px">${esc(r.note)}</div>${owner?`<div class="toolbar"><select id="rev_${r.id}" class="mini-input"><option value="requested" ${r.status==='requested'?'selected':''}>درخواست شده</option><option value="in_progress" ${r.status==='in_progress'?'selected':''}>در حال انجام</option><option value="resolved" ${r.status==='resolved'?'selected':''}>انجام شد</option><option value="rejected" ${r.status==='rejected'?'selected':''}>رد شد</option></select><button class="btn secondary" onclick="updateRevision('${r.id}','${id}')">ذخیره</button></div>`:''}</div>`).join('')||'<div class="muted">هنوز درخواست اصلاحی ثبت نشده.</div>'}
+        <textarea id="revisionText" style="width:100%;min-height:80px;margin-top:8px;background:#ffffff06;color:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;font:inherit" placeholder="${owner?'یادداشت اصلاح یا توضیح برای مشتری...':'دقیقاً چه چیزی باید اصلاح شود؟'}"></textarea>
+        <button class="btn secondary" onclick="addRevision('${id}')">🔄 ${owner?'ثبت یادداشت':'درخواست اصلاح'}</button>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:12px"><b>📁 Project Vault</b><div class="drop"><input type="file" id="fileInput" multiple><button class="btn secondary" onclick="uploadOrderFiles('${id}')">📤 Upload File</button></div>${(files||[]).map(f=>`<div class="summary-row"><span>📄 ${esc(f.file_name)} <small class="muted">${fmtBytes(f.size||0)} · ${esc(f.kind||'')}</small></span><button class="btn secondary" onclick="downloadFile('${escAttr(f.storage_path)}')">Open</button></div>`).join('')||'<div class="muted">هنوز فایلی نیست.</div>'}</div>
+    <div class="delivery-card"><div class="order-top" style="margin:0 0 10px"><div><b>📦 Delivery Center</b><div class="small muted">فایل‌های نهایی پروژه در اینجا تحویل داده می‌شوند.</div></div><span class="pill">${(finalFiles||[]).length?'READY':'WAITING'}</span></div>
+      ${(finalFiles||[]).length?finalFiles.map(f=>`<div class="delivery-file"><div><b class="delivery-final">🎬 ${esc(f.file_name)}</b><div class="small muted">${fmtBytes(f.size||0)} · ${new Date(f.created_at).toLocaleString('fa-IR')} · ${esc(f.version_label||'FINAL')}</div></div><button class="btn secondary" onclick="downloadFile('${escAttr(f.storage_path)}')">⬇️ Download Final</button></div>`).join(''):'<div class="muted">هنوز فایل نهایی تحویل داده نشده.</div>'}
+      <div class="delivery-actions" style="margin-top:12px">${owner?`<input type="file" id="finalFileInput" style="max-width:100%"><button class="btn primary" onclick="uploadFinalFile('${id}')">📤 Upload Final</button><button class="btn secondary" onclick="markOrderCompleted('${id}')">✅ Mark Completed</button>`:''}${(!owner&&(finalFiles||[]).length)?`<button class="btn primary" onclick="markCustomerReceived('${id}')">✅ دریافت کردم</button>`:''}</div>
+      <div id="deliveryMsg_${id}" class="small muted" style="margin-top:8px"></div>
+    </div>
+    <div class="panel" style="margin-top:12px"><b>💰 Invoice & Payment</b>${(inv||[]).map(i=>`<div class="summary-row"><span>${fmt(i.amount)} تومان</span><span>${esc(i.status)}</span></div>`).join('')||'<div class="muted">فاکتوری صادر نشده.</div>'}${owner?`<button class="btn primary" onclick="addInvoice('${id}')">Create/Update Invoice</button><button class="btn secondary" onclick="markPaid('${id}')">Mark Paid</button>`:''}</div>`;
+  $('#orderDetailModal').classList.add('open')
+}
+async function updateRevision(revisionId,orderId){
+  if(!(await isOwner()))return;
+  const status=$(`#rev_${revisionId}`).value;
+  const {error}=await sb.from('revisions').update({status}).eq('id',revisionId);
+  if(error){alert('⚠️ '+error.message);return}
+  await openOrderDetail(orderId);
+}
+async function uploadOrderFiles(orderId){
+  const files=$('#fileInput')?.files;
+  if(!files?.length)return;
+  for(const file of files) await uploadOrderFileSingle(orderId,file);
+  await openOrderDetail(orderId);
+}
+async function uploadOrderFileSingle(orderId,file){
+  if(!currentUser)return;
+  const customerId=currentOrder?.user_id||currentUser.id;
+  const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,'_');
+  const path=`${customerId}/${orderId}/${Date.now()}_${safe}`;
+  const {error}=await sb.storage.from('project-files').upload(path,file,{upsert:false});
+  if(error){alert('Upload: '+error.message);return}
+  const owner=await isOwner();
+  const {error:e2}=await sb.from('order_files').insert({order_id:orderId,user_id:customerId,file_name:file.name,storage_path:path,file_type:file.type,size:file.size,kind:owner?'owner-upload':'client-upload'});
+  if(e2)alert('ثبت فایل: '+e2.message);
+}
+
+async function uploadFinalFile(orderId){
+  if(!(await isOwner())){alert('⛔ فقط Owner می‌تواند فایل نهایی تحویل دهد.');return}
+  const file=$('#finalFileInput')?.files?.[0];
+  const msg=$(`#deliveryMsg_${orderId}`);
+  if(!file){if(msg)msg.textContent='⚠️ ابتدا فایل نهایی را انتخاب کن.';return}
+  const o=(window.ownerOrdersData||[]).find(x=>x.id===orderId);
+  const customerId=o?.user_id || currentUser?.id;
+  if(!customerId){if(msg)msg.textContent='⚠️ مشتری سفارش پیدا نشد.';return}
+  const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,'_');
+  const path=`${customerId}/${orderId}/final_${Date.now()}_${safe}`;
+  if(msg)msg.textContent='⏳ در حال آپلود فایل نهایی...';
+  const {error}=await sb.storage.from('project-files').upload(path,file,{upsert:false});
+  if(error){if(msg)msg.textContent='⚠️ '+error.message;return}
+  const {error:e2}=await sb.from('order_files').insert({order_id:orderId,user_id:customerId,file_name:file.name,storage_path:path,file_type:file.type,size:file.size,kind:'final'});
+  if(e2){if(msg)msg.textContent='⚠️ ثبت فایل نهایی ناموفق بود: '+e2.message;return}
+  await sb.from('notifications').insert({user_id:customerId,order_id:orderId,type:'delivery',title:'پروژه آماده تحویل است',body:`فایل نهایی ${file.name} برای سفارش شما آماده شده است.`}).catch(()=>{});
+  if(msg)msg.textContent='✅ فایل نهایی تحویل داده شد.';
+  await openOrderDetail(orderId);
+}
+async function markOrderCompleted(orderId){
+  if(!(await isOwner()))return;
+  const {error}=await sb.from('orders').update({status:'completed'}).eq('id',orderId);
+  if(error){alert('⚠️ '+error.message);return}
+  await openOrderDetail(orderId);
+}
+async function markCustomerReceived(orderId){
+  if(!currentUser)return;
+  const {error}=await sb.from('notifications').insert({user_id:currentUser.id,order_id:orderId,type:'delivery_received',title:'تحویل پروژه تأیید شد',body:'مشتری دریافت فایل نهایی را تأیید کرد.'});
+  if(error){alert('⚠️ '+error.message);return}
+  const owner=(await sb.rpc('is_owner')).data===true;
+  if(!owner){await sb.from('orders').update({status:'completed'}).eq('id',orderId).eq('user_id',currentUser.id)}
+  await openOrderDetail(orderId);
+}
+function closeOrderDetail(){$('#orderDetailModal').classList.remove('open')}
+async function sendMessage(orderId){let body=$('#messageText').value.trim();if(!body)return;let {error}=await sb.from('order_messages').insert({order_id:orderId,user_id:currentUser.id,message:body});if(error)alert(error.message);else openOrderDetail(orderId)}
+async function addRevision(orderId){let note=$('#revisionText').value.trim();if(!note)return;let {error}=await sb.from('revisions').insert({order_id:orderId,user_id:currentUser.id,note,status:'requested'});if(error)alert(error.message);else openOrderDetail(orderId)}
+async function addInvoice(orderId){if(!(await isOwner()))return;let amount=Number(prompt('مبلغ فاکتور (تومان):'));if(!amount)return;let o=(window.ownerOrdersData||[]).find(x=>x.id===orderId);let {error}=await sb.from('invoices').insert({order_id:orderId,user_id:o?.user_id,amount,status:'unpaid'});if(error)alert(error.message);else openOrderDetail(orderId)}
+async function markPaid(orderId){if(!(await isOwner()))return;let {error}=await sb.from('invoices').update({status:'paid',paid_at:new Date().toISOString()}).eq('order_id',orderId).eq('status','unpaid');if(error)alert(error.message);else openOrderDetail(orderId)}
+async function uploadOrderFile(orderId){if(!currentUser)return;let file=$('#fileInput')?.files?.[0];if(!file)return;let customerId=currentOrder?.user_id||currentUser.id;let path=`${customerId}/${orderId}/${Date.now()}_${file.name.replace(/[^a-zA-Z0-9._-]/g,'_')}`;let {error}=await sb.storage.from('project-files').upload(path,file,{upsert:false});if(error){alert('Upload: '+error.message);return}let {error:e2}=await sb.from('order_files').insert({order_id:orderId,user_id:customerId,file_name:file.name,storage_path:path,file_type:file.type,size:file.size,kind:(await isOwner())?'owner-upload':'client-upload'});if(e2)alert(e2.message);else openOrderDetail(orderId)}
+function fmtBytes(n){if(!n)return '0 B';let u=['B','KB','MB','GB'];let i=Math.min(Math.floor(Math.log(n)/Math.log(1024)),u.length-1);return `${(n/1024**i).toFixed(i?1:0)} ${u[i]}`}
+async function uploadClientFiles(orderId,files){if(!currentUser||!files?.length)return;const out=$(`#up_${orderId}`);const max=2*1024*1024*1024;for(const file of [...files]){if(file.size>max){if(out)out.textContent=`⚠️ ${file.name}: حداکثر حجم هر فایل 2GB است.`;continue}if(out)out.textContent=`⏳ در حال آپلود ${file.name}...`;const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,'_');const path=`${currentUser.id}/${orderId}/${Date.now()}_${safe}`;let {error}=await sb.storage.from('project-files').upload(path,file,{upsert:false});if(error){if(out)out.textContent=`⚠️ ${error.message}`;continue}let {error:e2}=await sb.from('order_files').insert({order_id:orderId,user_id:currentUser.id,file_name:file.name,storage_path:path,file_type:file.type,size:file.size,kind:'client-upload'});if(e2){if(out)out.textContent=`⚠️ ثبت فایل ناموفق بود: ${e2.message}`;continue}if(out)out.textContent=`✅ ${file.name} آپلود شد.`}await accountTab('files')}
+function handleDrop(e,orderId){e.preventDefault();e.currentTarget.classList.remove('dragover');uploadClientFiles(orderId,e.dataTransfer.files)}
+
+async function downloadFile(path){
+  if(!path){alert('⚠️ مسیر فایل پیدا نشد.');return}
+  const clean=String(path).trim().replace(/^\/+/, '').replace(/^project-files\/+?/i,'');
+  const candidates=[clean];
+  let lastError=null;
+  for(const p of [...new Set(candidates)]){
+    const {data,error}=await sb.storage.from('project-files').createSignedUrl(p,3600);
+    if(!error&&data?.signedUrl){window.open(data.signedUrl,'_blank');return}
+    lastError=error;
+  }
+  alert('⚠️ فایل در Storage پیدا نشد: '+(lastError?.message||'Object not found'));
+}
+async function initAuth(){if(!sb)return;const {data:{session}}=await sb.auth.getSession();currentUser=session?.user||null;if(currentUser)ensureProfile();sb.auth.onAuthStateChange((_e,s)=>{currentUser=s?.user||null})}
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+if(matchMedia('(pointer:fine)').matches){const c=$('#cursor'),r=$('#ring');let x=0,y=0,tx=0,ty=0;addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;c.style.left=tx+'px';c.style.top=ty+'px'});(function a(){x+=(tx-x)*.18;y+=(ty-y)*.18;r.style.left=x+'px';r.style.top=y+'px';requestAnimationFrame(a)})();document.querySelectorAll('a,button,.choice').forEach(el=>{el.addEventListener('mouseenter',()=>r.classList.add('hot'));el.addEventListener('mouseleave',()=>r.classList.remove('hot'))})}
+$('#menu').onclick=()=>{let n=$('.navlinks');n.style.display=n.style.display==='flex'?'none':'flex';n.style.position='absolute';n.style.top='60px';n.style.right='0';n.style.flexDirection='column';n.style.background='#100b18';n.style.padding='14px';n.style.borderRadius='24px';n.style.width='180px'};
+$('#prioritySelect')?.addEventListener('change',render);render();initAuth();
+</script>
+
+
+<script>
+document.getElementById('blazeOrderFiles')?.addEventListener('change',function(){
+ const n=this.files?.length||0;
+ const el=document.getElementById('blazeOrderFileName');
+ if(el) el.textContent=n?`${n} فایل انتخاب شد`:'هنوز فایلی انتخاب نشده';
+});
+</script>
+</body>
+</html>
